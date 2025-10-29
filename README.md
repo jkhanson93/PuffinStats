@@ -10,4 +10,5 @@ Puffin, my cat, is a liar. I made this app to prove he's full of it. This app ke
 
 ## Project Features:
 - Last Fed Date Tracking: Store the last date and time Puffin was fed.
-- Update Functionality: Easily update the last fed date using the Streamlit app.
+- Box Status: Return the last known status of Puffin's Box
+- Update Functionality: Easily update the last fed date or box status using the Streamlit app.
