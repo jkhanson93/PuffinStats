@@ -14,13 +14,13 @@ def get_last_fed():
     fed_time = ""
     with open("fedpuff.txt", "r") as file:
         fed_time = file.read()
-    data = {'value': f"Puffin was last fed at: {fed_time}"}
+    data = {'message': f"Puffin was last fed at {fed_time}"}
     return jsonify(data)
 
 @app.route('/api/feed', methods=['POST'])
 def feed_puff():
     curr_datetime = datetime.now()
-    formatted_dt = curr_datetime.strftime("%H:%M on %m-%d-%Y")
+    formatted_dt = curr_datetime.strftime("%#I:%M %p on %m-%d-%Y")
     with open("fedpuff.txt", "w") as file:
         file.write(formatted_dt)
     # Example: Process the input data
@@ -30,10 +30,10 @@ def feed_puff():
 @app.route('/api/boxStatus', methods=['GET'])
 def get_box_status():
     # Example: Fetch data from a database or perform a calculation
-    fed_time = ""
+    box_status = ""
     with open("puffbox.txt", "r") as file:
-        fed_time = file.read()
-    data = {'message': 'Puffin\'s box status:', 'value': fed_time}
+        box_status = file.read()
+    data = {'message': f"{box_status}"}
     return jsonify(data)
 
 @app.route('/api/cleanBox', methods=['POST'])
@@ -41,7 +41,7 @@ def clean_box():
     input_data = request.json
     cleaner = input_data['person']
     curr_datetime = datetime.now()
-    formatted_dt = curr_datetime.strftime("%H:%M on %m-%d-%Y")
+    formatted_dt = curr_datetime.strftime("%#I:%M %p on %m-%d-%Y")
     with open("puffbox.txt", "w") as file:
         file.write(f"{cleaner} cleaned Puff's box at {formatted_dt}")
     # Example: Process the input data
@@ -53,7 +53,7 @@ def change_box():
     input_data = request.json
     cleaner = input_data['person']
     curr_datetime = datetime.now()
-    formatted_dt = curr_datetime.strftime("%H:%M on %m-%d-%Y")
+    formatted_dt = curr_datetime.strftime("%#I:%M %p on %m-%d-%Y")
     with open("puffbox.txt", "w") as file:
         file.write(f"{cleaner} changed Puff's box at {formatted_dt}")
     # Example: Process the input data
