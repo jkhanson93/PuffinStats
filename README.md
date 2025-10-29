@@ -1,12 +1,13 @@
-About this project: Puffin, my cat, is a liar. I made this app to prove he's full of it. This app keeps track of the last time he was fed.
+# PuffinStats
 
-Technology Used:
+## About this project: ## 
+Puffin, my cat, is a liar. I made this app to prove he's full of it. This app keeps track of the last time he was fed.
 
-Flask
-Streamlit
-Python
+## Technology Used:
+- Flask
+- Streamlit
+- Python
 
-Project Features:
-
-Last Fed Date Tracking: Store the last date and time Puffin was fed.
-Update Functionality: Easily update the last fed date using the Streamlit app.
+## Project Features:
+- Last Fed Date Tracking: Store the last date and time Puffin was fed.
+- Update Functionality: Easily update the last fed date using the Streamlit app.
